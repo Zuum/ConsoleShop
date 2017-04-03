@@ -1,0 +1,37 @@
+{
+  "name": "ConsoleShop",
+  "description": "eCommerce app",
+  "main": "app.js",
+  "authors": [
+    "Zuum <djzuumik@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.1",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.9",
+    "angular-ui-router": "^0.2.18",
+    "angular-animate": "^1.5.5",
+    "angular-breadcrumb": "^0.4.1",
+    "angular-smart-table": "^2.1.8",
+    "js-cookie": "^2.1.1",
+    "angular-xeditable": "^0.1.12",
+    "angular-ui-notification": "^0.2.0",
+    "ng-dialog": "^0.6.1",
+    "angular-bootstrap-grid-tree": "^0.4.0",
+    "angular-ui-select": "^0.19.4",
+    "restangular": "^1.5.2"
+  },
+  "resolutions": {
+    "angular": "^1.5.9"
+  }
+}

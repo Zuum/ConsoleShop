@@ -1,0 +1,11 @@
+<h4 class="pageTitle">
+    <span ng-repeat="step in steps" ng-switch="$last || !!step.abstract">
+        <span ng-if="!$first">/</span>
+        <a ng-switch-when="false"
+           href="{{step.ncyBreadcrumbLink}}"
+           style="color: #fff">
+            {{step.ncyBreadcrumbLabel}}
+        </a>
+        <span ng-switch-when="true" style="color: #fff">{{step.ncyBreadcrumbLabel}}</span>
+    </span>
+</h4>

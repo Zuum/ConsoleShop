@@ -1,0 +1,35 @@
+<header ng-controller="HeaderController">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header" style="width: 675px">
+                <a class="navbar-toggle"
+                   role="button"
+                   data-toggle="collapse"
+                   href="#headerNavBarCollapse"
+                   aria-expanded="false"
+                   aria-controls="headerNavBarCollapse"
+                   style="margin-top: 19px;">
+                    <span class="sr-only">переключить навигацию</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a href="/" class="navbar-brand">
+                    <img src="/images/logo_4.png"
+                         alt="logo"
+                         align="left"
+                         style="margin-top: -9px; margin-left: -15px;"
+                         id="logo"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse pull-right" id="headerNavBarCollapse">
+                <ul class="nav navbar-nav" style="margin-top: 20px;">
+                    <li ng-repeat="link in links" style="padding:0" class="{{active(link)}}">
+                        <a ui-sref="{{link.url}}" style="padding: 0 5px 12px 5px">{{link.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
