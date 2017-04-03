@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "postinstall": "./node_modules/.bin/bower install --config.interactive=false"
+    "postinstall": "./node_modules/.bin/bower install --config.interactive=false && ./node_modules/.bin/webpack"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
