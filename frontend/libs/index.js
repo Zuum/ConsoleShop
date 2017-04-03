@@ -2,7 +2,7 @@
 
 require('angular/angular.js');
 require('lodash/dist/lodash.min.js');
-require('restangular/dist/restangular.min.js');
+require('restangular/dist/restangular.js');
 require('angular-ui-router/release/angular-ui-router.min.js');
 require('angular-animate/angular-animate.min.js');
 require('angular-breadcrumb/dist/angular-breadcrumb.min.js');
