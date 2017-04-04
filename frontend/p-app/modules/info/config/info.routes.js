@@ -7,19 +7,24 @@ let run = ($rootScope, $state, $stateParams) => {
 run.$inject = ['$rootScope', '$state', '$stateParams'];
 
 let config = ($stateProvider, $urlRouterProvider) => {
-  $urlRouterProvider
-    .otherwise('/public/info');
-
   $stateProvider
-    .state('public', {
+    .state('public.info', {
       abstract: true,
-      url: '/public',
-      templateUrl: '/app-views/core/public.abstract.view.html'
+      url: '/info',
+      templateUrl: '/app-views/info/info.abstract.view.html'
+    })
+    .state('public.info.main', {
+      url: '',
+      templateUrl: '/app-views/info/info.view.html',
+      controller: 'InfoController',
+      ncyBreadcrumb: {
+        label: ""
+      }
     });
 };
 config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 angular
-  .module('core')
+  .module('info')
   .run(run)
   .config(config);
