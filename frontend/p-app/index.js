@@ -22,3 +22,5 @@ angular.module(config.appName).config(['$locationProvider', 'RestangularProvider
 
 // load `core` module
 require('./modules/core/index.js');
+// load `info` module
+require('./modules/info/index.js');

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta charset="UTF-8">
     <title>Console</title>
     <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/font-awesome.min.css">
 
     <base href="/">
 
@@ -22,10 +25,32 @@
         <div ui-view></div>
     </div>
 
-    <ng-include src="'/app-views/core/footer.view.html'" class="navbar-fixed-bottom"></ng-include>
+    <!--Footer-->
+    <ng-include src="'/app-views/core/footer.view.html'"></ng-include>
+
+    <!-- Modal -->
+    <ng-include src="'/app-views/core/modal.view.html'"></ng-include>
 
     <script src="../js/libs.js"></script>
     <script src="../js/pApp.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script>
+        $(document).ready(
+                function() {
+                    $("html").niceScroll({cursorcolor:"#000"});
+                }
+        );
+    </script>
+
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
 </body>
 

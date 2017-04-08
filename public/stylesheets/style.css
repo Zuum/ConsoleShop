@@ -1,8 +1,386 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*============    ШРИФТЫ    ===========*/
+@font-face {
+  font-family: 'PlayfairDisplaySCBlack';
+  src: url('fonts/PlayfairDisplaySCBlack.eot');
+  src: url('fonts/PlayfairDisplaySCBlack.eot') format('embedded-opentype'), url('fonts/PlayfairDisplaySCBlack.woff2') format('woff2'), url('fonts/PlayfairDisplaySCBlack.woff') format('woff'), url('fonts/PlayfairDisplaySCBlack.ttf') format('truetype'), url('fonts/PlayfairDisplaySCBlack.svg#PlayfairDisplaySCBlack') format('svg');
 }
-
-a {
-  color: #00B7FF;
+@font-face {
+  font-family: 'PlayfairDisplaySCBold';
+  src: url('fonts/PlayfairDisplaySCBold.eot');
+  src: url('fonts/PlayfairDisplaySCBold.eot') format('embedded-opentype'), url('fonts/PlayfairDisplaySCBold.woff2') format('woff2'), url('fonts/PlayfairDisplaySCBold.woff') format('woff'), url('fonts/PlayfairDisplaySCBold.ttf') format('truetype'), url('fonts/PlayfairDisplaySCBold.svg#PlayfairDisplaySCBold') format('svg');
+}
+@font-face {
+  font-family: 'PlayfairDisplaySCRegular';
+  src: url('fonts/PlayfairDisplaySCRegular.eot');
+  src: url('fonts/PlayfairDisplaySCRegular.eot') format('embedded-opentype'), url('fonts/PlayfairDisplaySCRegular.woff2') format('woff2'), url('fonts/PlayfairDisplaySCRegular.woff') format('woff'), url('fonts/PlayfairDisplaySCRegular.ttf') format('truetype'), url('fonts/PlayfairDisplaySCRegular.svg#PlayfairDisplaySCRegular') format('svg');
+}
+.bold {
+  font-family: PlayfairDisplaySCBold;
+}
+.med {
+  font-family: PlayfairDisplaySCBlack;
+}
+.light {
+  font-family: PlayfairDisplaySCRegular;
+}
+/*============    Базовые настройки    ===========*/
+a:hover,
+a:focus,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+ol,
+ul {
+  list-style: none;
+}
+/*============    ШАПКА    ===========*/
+header p {
+  color: #62C2E4;
+  font-family: PlayfairDisplaySCBold;
+  margin: 0;
+  padding: 0;
+}
+header #input-search {
+  margin-top: 10px;
+  border: 2px solid #62C2E4;
+  width: 150px;
+  height: auto;
+}
+header #input-search:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+header #button-search {
+  font-family: PlayfairDisplaySCBold;
+  border: none;
+  color: #62C2E4;
+  border: 2px solid #62C2E4;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+header #button-search:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+header .phone_number {
+  text-align: left;
+}
+header .phone_number a {
+  color: #62C2E4;
+  display: inline-block;
+}
+.mid header .phone_number a:hover {
+  text-decoration: none;
+}
+header .phone_number a:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/phone.png");
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+.advantages {
+  background: #FFF none repeat scroll 0 0;
+  color: #000;
+}
+.advantages li {
+  position: relative;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 25px 0;
+  width: 33.3333%;
+  border-left: 1px solid #fff;
+  font-size: 16px;
+}
+.advantages li em {
+  display: block;
+  font-style: normal;
+  color: #777;
+  font-size: 13px;
+  width: 200px;
+}
+.advantages .first {
+  padding-left: 65px;
+  background: url('../images/b1.png') no-repeat;
+  background-position: 0 50%;
+}
+.advantages .second {
+  padding-left: 65px;
+  background: url('../images/b2.png') no-repeat;
+  background-position: 0 50%;
+}
+.advantages .third {
+  padding-left: 65px;
+  background: url('../images/b3.png') no-repeat;
+  background-position: 0 50%;
+}
+/*============    НАВИГАЦИЯ    ===========*/
+.navbar {
+  float: right;
+}
+.navbar,
+.dropdown-menu,
+header {
+  background: #666666;
+  border: none;
+}
+.dropdown:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+.nav > li > a,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a,
+.dropdown-menu > li {
+  border-bottom: 3px solid transparent;
+}
+.nav > li > a:focus,
+.nav > li > a:hover,
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a,
+.dropdown-menu > li > a,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+  color: #fff;
+}
+.dropdown-menu {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.dropdown-menu:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+.nav li:hover:nth-child(8n+1),
+.nav li.active:nth-child(8n+1) {
+  border-bottom: #C4E17F 3px solid;
+}
+.nav li:hover:nth-child(8n+2),
+.nav li.active:nth-child(8n+2) {
+  border-bottom: #F7FDCA 3px solid;
+}
+.nav li:hover:nth-child(8n+3),
+.nav li.active:nth-child(8n+3) {
+  border-bottom: #FECF71 3px solid;
+}
+.nav li:hover:nth-child(8n+4),
+.nav li.active:nth-child(8n+4) {
+  border-bottom: #F0776C 3px solid;
+}
+.nav li:hover:nth-child(8n+5),
+.nav li.active:nth-child(8n+5) {
+  border-bottom: #DB9DBE 3px solid;
+}
+.nav li:hover:nth-child(8n+6),
+.nav li.active:nth-child(8n+6) {
+  border-bottom: #C49CDE 3px solid;
+}
+.nav li:hover:nth-child(8n+7),
+.nav li.active:nth-child(8n+7) {
+  border-bottom: #669AE1 3px solid;
+}
+.nav li:hover:nth-child(8n+8),
+.nav li.active:nth-child(8n+8) {
+  border-bottom: #62C2E4 3px solid;
+}
+.carousel {
+  margin-top: 20px;
+  padding-left: 150px;
+  padding-right: 150px;
+  height: 400px;
+  margin-bottom: 20px;
+}
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.0001)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.0001) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+.carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  background: #FFFFFF;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  bottom: auto;
+  min-width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+section#types {
+  color: #666666;
+  padding-top: 50px;
+}
+section#types .section-header {
+  margin-bottom: 50px;
+}
+section#types h4 {
+  margin-top: 25px;
+  text-transform: uppercase;
+  font-family: PlayfairDisplaySCRegular;
+}
+section#types button.more-btn {
+  font-family: PlayfairDisplaySCBold;
+  border: none;
+  color: #62C2E4;
+  border: 2px solid #62C2E4;
+  padding: 10px 15px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+section#types button.more-btn:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+section#types button.offer-btn {
+  border: none;
+  color: #62C2E4;
+  border: 2px solid #62C2E4;
+  padding: 10px 15px;
+  background-color: #62C2E4;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-family: PlayfairDisplaySCBold;
+  -moz-transition: all 0.1s 0.2s ease;
+  -o-transition: all 0.1s 0.2s ease;
+  -webkit-transition: all 0.1s 0.2s ease;
+}
+section#types button.offer-btn:hover {
+  background-color: #62C2E4;
+  color: #62C2E4;
+}
+section#types .card {
+  -moz-transition: all 0.1s 0.2s ease;
+  -o-transition: all 0.1s 0.2s ease;
+  -webkit-transition: all 0.1s 0.2s ease;
+  padding: 5px;
+  border: 2px solid transparent;
+}
+section#types .card:hover {
+  border: 2px solid #62C2E4;
+  background-color: #666;
+}
+footer {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  background-color: #666666;
+  color: #FFFFFF;
+}
+footer h3 {
+  font-family: PlayfairDisplaySCBold;
+  text-transform: uppercase;
+}
+footer h3 a {
+  color: white;
+}
+footer h4 {
+  font-family: PlayfairDisplaySCBlack;
+  text-transform: uppercase;
+}
+footer .social-links,
+footer .callback {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+footer .social-links,
+footer .callback {
+  font-size: 15px;
+}
+footer .footer-head {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer .social-links img {
+  height: 35px;
+  width: 60px;
+}
+footer .social-links .vk {
+  width: 60px;
+}
+footer .social-links a {
+  color: #62C2E4;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid #fff;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  vertical-align: middle;
+  border-radius: 50%;
+  line-height: 55px;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+footer .footer-btn {
+  display: inline-block;
+  padding: 10px 2px;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+}
+footer .footer-btn:hover {
+  color: #555;
+  background-color: #fff;
+}
+address {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+address p#address {
+  margin-bottom: 0px;
+  text-transform: uppercase;
+  font-family: PlayfairDisplaySCRegular;
+}
+address p#address:before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: url("../images/to4ka.png") no-repeat center center;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 3px;
+}
+address p#don {
+  font-size: 20px;
+  font-family: PlayfairDisplaySCRegular;
+}
+.phone_footer {
+  margin-left: 15px;
 }
