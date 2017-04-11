@@ -25,6 +25,10 @@ module.exports = (db) => {
                 models.Contacts.belongsTo(models.ContactTypes, {
                     foreignKey: "contactTypeId"
                 });
+
+                models.Contacts.belongsTo(models.Persons, {
+                    foreignKey: "personId"
+                });
             }
         }
     });

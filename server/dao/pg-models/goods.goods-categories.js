@@ -12,6 +12,12 @@ module.exports = (db) => {
         },
         description: {
             type: Sequelize.STRING(2048)
+        },
+        link: {
+            type: Sequelize.STRING(1024)
+        },
+        parentId: {
+            type: Sequelize.INTEGER
         }
     };
 

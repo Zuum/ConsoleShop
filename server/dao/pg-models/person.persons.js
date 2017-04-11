@@ -1,17 +1,13 @@
 'use strict';
 
-const ModelName = 'Links';
+const ModelName = 'Persons';
 
 module.exports = (db) => {
     const Sequelize = db.Sequelize;
     const schema = {
-        link: {
-            type: Sequelize.STRING
-        },
         name: {
             type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
+            allowNull: false
         }
     };
 
@@ -19,11 +15,13 @@ module.exports = (db) => {
         // disable the modification of table names
         freezeTableName: true,
         // define the table's name
-        tableName: 'N_Links',
+        tableName: 'P_Persons',
 
         classMethods: {
             associate: function (models) {
-
+                models.Persons.hasMany(models.Contacts, {
+                    foreignKey: "personId"
+                });
             }
         }
     });
