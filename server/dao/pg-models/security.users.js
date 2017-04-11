@@ -31,9 +31,6 @@ module.exports = (db) => {
         },
         resetTokenExpiration: {
             type: Sequelize.DATE
-        },
-        personId: {
-            type: Sequelize.BIGINT
         }
     };
 

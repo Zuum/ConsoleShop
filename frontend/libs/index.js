@@ -1,5 +1,5 @@
 'use strict';
-
+//load libs
 require('angular/angular.js');
 require('lodash/dist/lodash.min.js');
 require('restangular/dist/restangular.js');
@@ -15,3 +15,13 @@ require('angular-ui-select/dist/select.min.js');
 window.Cookies = require('js-cookie/src/js.cookie.js');
 window.jQuery = window.$ = require('jquery/dist/jquery.min.js');
 require('bootstrap/dist/js/bootstrap.min.js');
+var wow = require('wow/dist/wow.min.js');
+var nicescroll = require('jquery.nicescroll/dist/jquery.nicescroll.min.js');
+// init wow
+new wow.WOW().init();
+// init nice scroll
+window.$(document).ready(
+    function() {
+        window.$("html").niceScroll({cursorcolor:"#000"});
+    }
+);

@@ -17,11 +17,14 @@ module.exports = (db) => {
         qty: {
             type: Sequelize.INTEGER
         },
-        priceModifier: {
-            type: Sequelize.INTEGER
-        },
         description: {
             type: Sequelize.STRING(2048)
+        },
+        priority: {
+            type: Sequelize.INTEGER
+        },
+        producer: {
+            type: Sequelize.STRING
         }
     };
 
@@ -35,7 +38,11 @@ module.exports = (db) => {
             associate: function (models) {
                 models.Goods.belongsTo(models.GoodsCategories, {
                     foreignKey: "categoryId"
-                })
+                });
+
+                models.Goods.belongsTo(models.Discounts, {
+                    foreignKey: "discountId"
+                });
             }
         }
     });
