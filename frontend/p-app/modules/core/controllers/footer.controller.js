@@ -2,8 +2,8 @@
 
 angular
   .module('core')
-  .controller('FooterController', ['$scope',
-    ($scope) => {
+  .controller('FooterController', ['$scope', 'FooterLinks',
+    ($scope, FooterLinks) => {
       let vm = $scope;
 
       FooterLinks
