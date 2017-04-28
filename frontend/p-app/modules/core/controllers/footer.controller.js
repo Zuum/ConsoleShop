@@ -5,7 +5,7 @@ angular
   .controller('FooterController', ['$scope',
     ($scope) => {
       let vm = $scope;
-/*
+
       FooterLinks
         .getList(vm.query)
         .then(links => {

@@ -11,7 +11,7 @@ require('./config/core.routes.js');
 //load controllers
 require('./controllers/app.controller.js');
 require('./controllers/header.controller.js');
-require('./controllers/top-nav.controller.js');
+require('./controllers/nav-bar.controller.js');
 require('./controllers/sidebar.controller.js');
 require('./controllers/footer.controller.js');
 
