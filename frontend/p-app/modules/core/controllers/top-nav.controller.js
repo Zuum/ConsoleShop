@@ -6,8 +6,9 @@ angular
       ($scope, Restangular, TopNav, $state) => {
         const vm = $scope;
 
-        TopNav.getList()
+        TopNav.getList({})
             .then((result) => {
+              console.log(result);
               vm.links = result;
             });
 
