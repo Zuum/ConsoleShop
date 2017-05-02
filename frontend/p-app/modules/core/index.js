@@ -18,6 +18,8 @@ require('./controllers/footer.controller.js');
 //load services
 require('./services/service-helper.service.js');
 require('./services/footer-links.service.js');
+require('./services/top-nav.service.js');
+
 
 
 

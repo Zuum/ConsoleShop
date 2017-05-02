@@ -1,41 +1,5 @@
-<section id="inner-headline" ng-controller="TopNavController">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-9 col-sm-10">
-                <div ncy-breadcrumb></div>
-            </div>
-            <div class="col-xs-3 col-sm-2 text-right">
-                <div class="dropdown" style="margin-top:20px;">
-                    <a href="#"
-                       id="dLabel"
-                       data-toggle="dropdown"
-                       aria-haspopup="true"
-                       aria-expanded="false">
-                        Меню<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu userAppDropDownMenu"
-                        aria-labelledby="dLabel"
-                        style="margin-top:18px;width: 100%">
-                        <li class="text-right">
-                            <a href="/public"
-                               target="_self">
-                                Реестр
-                            </a>
-                        </li>
-                        <li class="text-right">
-                            <a href="/app/profile">
-                                Профиль
-                            </a>
-                        </li>
-                        <li role="separator" class="divider userAppDropDownMenuDivider"></li>
-                        <li class="text-right">
-                            <a href="/app/user/logout">
-                                Выйти
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+<div class="topnav" id="TopNav" ng-controller="TopNavController">
+    <div ng-repeat="link in links">
+        <a ng-href="link.link">{{link.name}}</a>
     </div>
-</section>
+</div>
