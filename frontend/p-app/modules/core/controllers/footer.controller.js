@@ -48,5 +48,4 @@ angular
             .error(err.message);
           console.log(err);
         });
-        */
     }]);
