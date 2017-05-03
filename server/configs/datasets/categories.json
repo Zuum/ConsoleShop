@@ -1,70 +1,30 @@
 [
   {
-    "name":"Category1",
-    "children": [
-      {
-        "name": "SubCategory1_1"
-      },
-      {
-        "name": "SubCategory1_2"
-      },
-      {
-        "name": "SubCategory1_3"
-      },
-      {
-        "name": "SubCategory1_4"
-      }
-    ]
+    "name":"Часы и будильники",
+    "code":"clocks"
   },
   {
-    "name":"Category2",
-    "children": [
-      {
-        "name": "SubCategory2_1"
-      },
-      {
-        "name": "SubCategory2_2"
-      },
-      {
-        "name": "SubCategory2_3"
-      },
-      {
-        "name": "SubCategory2_4"
-      }
-    ]
+    "name":"Сталь и эмаль",
+    "code":"steel"
   },
   {
-    "name":"Category3",
-    "children": [
-      {
-        "name": "SubCategory3_1"
-      },
-      {
-        "name": "SubCategory3_2"
-      },
-      {
-        "name": "SubCategory3_3"
-      },
-      {
-        "name": "SubCategory3_4"
-      }
-    ]
+    "name":"Бытовая химия",
+    "code":"chemistry"
   },
   {
-    "name":"Category4",
-    "children": [
-      {
-        "name": "SubCategory4_1"
-      },
-      {
-        "name": "SubCategory4_2"
-      },
-      {
-        "name": "SubCategory4_3"
-      },
-      {
-        "name": "SubCategory4_4"
-      }
-    ]
+    "name":"Электротовары",
+    "code":"electro"
+  },
+  {
+    "name":"Китайские товары",
+    "code":"china"
+  },
+  {
+    "name":"Стекло",
+    "code":"glass"
+  },
+  {
+    "name":"Пластик",
+    "code":"plastic"
   }
 ]
