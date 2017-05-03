@@ -5,20 +5,22 @@ const ModelName = 'GoodsCategories';
 module.exports = (db) => {
     const Sequelize = db.Sequelize;
     const schema = {
-        name: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
-        },
-        description: {
+      name: {
+          type: Sequelize.STRING,
+          allowNull: false,
+          unique: true
+      },
+      code: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      },
+      description: {
             type: Sequelize.STRING(2048)
-        },
-        link: {
-            type: Sequelize.STRING(1024)
-        },
-        parentId: {
-            type: Sequelize.INTEGER
-        }
+      },
+      parentId: {
+          type: Sequelize.INTEGER
+      }
     };
 
     return db.pg.define(ModelName, schema, {
