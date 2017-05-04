@@ -15,7 +15,7 @@ const htmlGenerators = (() => {
 })();
 
 angular
-  .module('registry')
+  .module('goods')
   .filter('htmlSanitize', ['$sce', ($sce) => {
     return (row, col) => {
       if (typeof(col.content) === 'string') {
@@ -24,7 +24,7 @@ angular
       return $sce.trustAsHtml(col.content(row));
     };
   }])
-  .directive('schoolsList', [ '$state', 'AppState', ($state, AppState) => {
+  .directive('goodsList', [ '$state', 'AppState', ($state, AppState) => {
     const controller = ['$scope', 'Restangular', ($scope, Restangular) => {
       const options = $scope.options;
       const PER_PAGE = options.perPage;

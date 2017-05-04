@@ -4,7 +4,6 @@ angular
     .module('goods')
     .controller('ClocksListController', ['$scope', 'Clocks', 'Restangular',
       ($scope, Clocks, Restangular) => {
-        let vm = $scope;
         const vm = $scope;
         const Qty = Restangular.one('news')
             .customGET.bind({}, 'qty');
