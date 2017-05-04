@@ -42,7 +42,22 @@ module.exports = (router) => {
                   });
             });
       });
-
+  router
+      .get('/p-api/clocks/qty', (req, res) => {
+        Goods.count({ include: [ { model: GoodsCategories, where: { code: CLOCKS } } ] })
+            .then((result) => {
+              res.status(200)
+                  .json(result || []);
+            })
+            .catch((err) => {
+              console.log(err);
+              res.status(500)
+                  .json({
+                    success: false,
+                    message: 'Запрос завершился с ошибкой'
+                  });
+            });
+      });
   router
       .get('/p-api/clocks/:id', (req, res) => {
         Goods.findOne({where: {id: req.params.id}})
