@@ -5,12 +5,31 @@ const Goods = require('../server/configs/sequelize.js').models.Goods;
 const GoodsCategories = require('../server/configs/sequelize.js').models.GoodsCategories;
 const clocksData = require('../server/configs/db.js').postgres.initialData.clocks;
 const Promise = require('bluebird');
-const copy = require('../server/utils/clone-machine.js');
 
 exports.up = (next) => {
-
+  return GoodsCategories.findAll()
+    .then((categories) => {
+        return Promise.map(clocksData, (clock) => {
+          clock.categoryId = _.find(categories, { code: clock.categoryCode }).id;
+          delete clock.categotyName;
+          clock.price = parseFloat(clock.price.replace(",", "."));
+          return Goods.create(clock)
+        })
+      })
+  .nodeify(next)
 };
 
 exports.down = (next) => {
-
+  var codes = [];
+  return Promise.map(clocksData, (clock) => {
+    codes.push(clock.code);
+  })
+      .then(() => {
+    return Goods.destroy({
+      where: {
+        code: { $in: codes }
+      }
+    })
+  })
+  .nodeify(next)
 };
