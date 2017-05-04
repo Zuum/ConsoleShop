@@ -7,14 +7,15 @@ const clocksData = require('../server/configs/db.js').postgres.initialData.clock
 const Promise = require('bluebird');
 
 exports.up = (next) => {
-  return Promise.map(clocksData, (clock) => {
-    return GoodsCategories.findOne({ where: { code: clock.categoryCode } })
-    .then((category) => {
+  return GoodsCategories.findAll()
+    .then((categories) => {
+        return Promise.map(clocksData, (clock) => {
+          clock.categoryId = _.find(categories, { code: clock.categoryCode }).id;
           delete clock.categotyName;
-          clock.categoryId = category.id;
-          return Goods.create(clock);
+          clock.price = parseFloat(clock.price.replace(",", "."));
+          return Goods.create(clock)
         })
-  })
+      })
   .nodeify(next)
 };
 
@@ -30,5 +31,5 @@ exports.down = (next) => {
       }
     })
   })
-  .nodeufy(next)
+  .nodeify(next)
 };

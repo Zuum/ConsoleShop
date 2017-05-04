@@ -7,11 +7,10 @@ module.exports = (db) => {
     const schema = {
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
       },
       price: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false
       },
       qty: {
@@ -30,7 +29,9 @@ module.exports = (db) => {
         type: Sequelize.STRING
       },
       code: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
       }
     };
 
