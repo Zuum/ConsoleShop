@@ -1,0 +1,14 @@
+[
+  {
+   "name":"Адрес",
+   "code":"address"
+  },
+  {
+    "name":"Телефон",
+    "code":"telephone"
+  },
+  {
+    "name":"Электронная почта",
+    "code":"email"
+  }
+]
