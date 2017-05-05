@@ -12,7 +12,7 @@ angular.module(config.appName).config(['$locationProvider', 'RestangularProvider
       .html5Mode(true);
 
     RestangularProvider.setRestangularFields({ id: 'id' });
-    RestangularProvider.setBaseUrl('/p-api/v1');
+    RestangularProvider.setBaseUrl('/p-api');
 
     $breadcrumbProvider.setOptions({
       templateUrl: '/views/core/breadcrumb.view.html'

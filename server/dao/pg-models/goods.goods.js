@@ -5,27 +5,34 @@ const ModelName = 'Goods';
 module.exports = (db) => {
     const Sequelize = db.Sequelize;
     const schema = {
-        name: {
-            type: Sequelize.STRING,
-            allowNull: false,
-            unique: true
-        },
-        price: {
-            type: Sequelize.INTEGER,
-            allowNull: false
-        },
-        qty: {
-            type: Sequelize.INTEGER
-        },
-        description: {
-            type: Sequelize.STRING(2048)
-        },
-        priority: {
-            type: Sequelize.INTEGER
-        },
-        producer: {
-            type: Sequelize.STRING
-        }
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      price: {
+        type: Sequelize.FLOAT,
+        allowNull: false
+      },
+      qty: {
+        type: Sequelize.INTEGER
+      },
+      description: {
+        type: Sequelize.STRING(2048)
+      },
+      priority: {
+        type: Sequelize.INTEGER
+      },
+      producer: {
+        type: Sequelize.STRING
+      },
+      imagePath: {
+        type: Sequelize.STRING
+      },
+      code: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      }
     };
 
     return db.pg.define(ModelName, schema, {

@@ -1,1 +1,2 @@
-{"migrations":[{"title":"1491912352399-add-nav-links.js"}],"path":"migrations/.migrate","pos":0,"_events":{},"_eventsCount":1}
+{"migrations":[{"title":"1491912352399-add-nav-links.js"},{"title":"1491912364268-add-categories.js"},{"title":"1493728783960-add-clocks.js"}],"path":"migrations/.migrate","pos":3,"_events":{},"_eventsCount":1}
+

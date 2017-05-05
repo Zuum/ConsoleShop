@@ -1,30 +1,18 @@
 'use strict';
 
 angular
-  .module('core')
-  .controller('TopNavController', ['$scope', 'Restangular', ($scope, Restangular) => {
-    const vm = $scope;
-    const token = Cookies.get('token');
+    .module('core')
+    .controller('TopNavController', ['$scope', 'Restangular', 'TopNav', '$state',
+      ($scope, Restangular, TopNav, $state) => {
+        const vm = $scope;
 
-    vm.user = {
-      role: '1'
-    };
+        TopNav.getList({})
+            .then((result) => {
+              console.log(result);
+              vm.links = result;
+            });
 
-    if (token) {
-      Restangular
-        .one(`whoAmI`)
-        .customPOST({ token: Cookies.get('token') })
-        .then((data) => {
-          if (data) {
-            if (data.success !== false) {
-              vm.user = data;
-            } else {
-              console.log('Аутентификация провалена.', data.message);
-            }
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }]);
+        vm.active = (link) => {
+          return $state.includes(link.link.replace('.main', '')) ? 'active' : '';
+        };
+      }]);

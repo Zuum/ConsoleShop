@@ -1,0 +1,54 @@
+<div>
+    <div class="media">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object logo200x200"
+                     ng-src="{{'/images/' + school.props.schoolType + '-2.png'}}"
+                     alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">{{school.name}}
+                <span ng-if="school.props && school.props.type">
+                    <br/>
+                    <small>Тип: {{school.props.type}}</small>
+                </span>
+            </h3>
+            <br/>
+            <table>
+                <tr>
+                    <td style="padding-right: 15px;"><b>Адрес</b></td>
+                    <td>{{school.address | notAvailable}}</td>
+                </tr>
+                <tr ng-if="school.url">
+                    <td style="padding-right: 15px;"><b>Официальный сайт</b></td>
+                    <td>
+                        <a href="{{school.url}}" target="_blank">
+                            {{urlText(school.url)}}
+                        </a>
+                    </td>
+                </tr>
+                <tr ng-if="showContacts(school)">
+                    <td style="padding-right: 15px;" colspan="2"><b>Контактные данные</b></td>
+                </tr>
+                <tr ng-if="showContacts(school)" ng-repeat="cg in school.contacts">
+                    <td style="vertical-align: top; padding-right: 10px" class="text-right">
+                        <u>{{cg.name}}:</u>
+                    </td>
+                    <td>
+                        <ul class="list-unstyled">
+                            <li ng-repeat="contact in cg.contacts">
+                                {{contact.contact + showDescription(cg, contact)}}
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <a class="previous" ng-click="backToList()" style="cursor: pointer">
+        <span>←</span>Вернуться к списку
+    </a>
+</div>
