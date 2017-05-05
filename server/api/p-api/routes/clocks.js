@@ -10,7 +10,11 @@ const CLOCKS = "clocks";
 module.exports = (router) => {
   router
       .get('/p-api/clocks', (req, res) => {
-        Goods.findAll({ include: [ { model: GoodsCategories, where: { code: CLOCKS } } ] })
+        let offset = req.query.skip;
+        let limit = req.query.limit;
+
+        const query = { offset, limit, include: [ { model: GoodsCategories, where: { code: CLOCKS } } ]  };
+        Goods.findAll(query)
             .then((result) => {
               res.status(200)
                   .json(result || []);

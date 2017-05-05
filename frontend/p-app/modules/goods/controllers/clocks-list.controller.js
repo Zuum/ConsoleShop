@@ -1,35 +1,34 @@
 'use strict';
 
+const PER_PAGE = 9;
+
+angular
+    .module('goods')
+    .controller('ClocksListController', ['$scope', 'Clocks', 'Restangular', ($scope, Clocks, Restangular) => {
+      const qtyGetter = ((Restangular) => {
+        return {
+          getQty: Restangular.one('clocks')
+              .customGET.bind({}, 'qty')
+        }
+      })(Employee);
+      $scope.dirOptions = {
+        goodsType: 'clocks',
+        perPage: PER_PAGE,
+        dataSource: Goods,
+        qtyGetter
+      };
+    }]);
+/*
 angular
     .module('goods')
     .controller('ClocksListController', ['$scope', 'Clocks', 'Restangular',
       ($scope, Clocks, Restangular) => {
-        let vm = $scope;
         const vm = $scope;
-        const Qty = Restangular.one('news')
+        const Qty = Restangular.one('clocks')
             .customGET.bind({}, 'qty');
         let QTY = PER_PAGE;
         vm.currentPage = 1;
         vm.query = {};
-
-        vm.formatter = (text) => {
-          var result;
-          var endIndex = text.indexOf('.', 250);
-          if (endIndex < 0) {
-            endIndex = text.indexOf('?', 250);
-            if (endIndex < 0) {
-              endIndex = text.indexOf('!', 250)
-              if (endIndex < 0) {
-                endIndex = text.indexOf(' ', 250);
-                if (endIndex < 0) {
-                  endIndex = text.length;
-                }
-              }
-            }
-          }
-          result = text.substring(0, endIndex) + ' ...';
-          return result;
-        };
 
         const loadList = () => {
           const query = _.assign({
@@ -39,7 +38,7 @@ angular
               createdAt: -1
             }
           }, vm.query);
-          vm.list = News.getList(query).$object;
+          vm.list = Clocks.getList(query).$object;
         };
 
         const loadQty = () => {
@@ -73,4 +72,4 @@ angular
 
         loadList();
         loadQty();
-      }]);
+      }]);*/

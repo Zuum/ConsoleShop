@@ -5,6 +5,6 @@ angular
     .controller('ClocksInfoController', ['$scope', 'Restangular', '$state',
       ($scope, Restangular, $state) => {
         $scope.dirOptions = {
-          school: Restangular.one(`school`).customGET($state.params.id).$object
+          clock: Restangular.one(`clocks`).customGET($state.params.id).$object
         };
       }]);
