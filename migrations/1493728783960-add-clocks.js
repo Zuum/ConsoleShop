@@ -11,7 +11,7 @@ exports.up = (next) => {
     .then((categories) => {
         return Promise.map(clocksData, (clock) => {
           clock.categoryId = _.find(categories, { code: clock.categoryCode }).id;
-          delete clock.categotyName;
+          delete clock.categotyCode;
           clock.price = parseFloat(clock.price.replace(",", "."));
           return Goods.create(clock)
         })

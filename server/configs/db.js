@@ -6,7 +6,9 @@ config.postgres = {
   initialData: {
     navLinks: require('./datasets/navigation-links.json'),
     categories: require('./datasets/categories.json'),
-    clocks: require('./datasets/clocks.json')
+    clocks: require('./datasets/clocks.json'),
+    contactTypes: require('./datasets/contact-types.json'),
+    contacts: require('./datasets/contacts.json')
   }
 };
 
