@@ -8,11 +8,14 @@ angular
 
         TopNav.getList({})
             .then((result) => {
-              console.log(result);
               vm.links = result;
             });
 
         vm.active = (link) => {
           return $state.includes(link.link.replace('.main', '')) ? 'active' : '';
         };
+
+        vm.go = (link) =>{
+          return $state.go("public." + link + ".main");
+        }
       }]);

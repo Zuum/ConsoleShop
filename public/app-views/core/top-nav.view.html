@@ -1,5 +1,5 @@
 <div class="topnav" id="TopNav" ng-controller="TopNavController">
     <div ng-repeat="link in links">
-        <a ng-href="link.link">{{link.name}}</a>
+        <a ng-click="go(link.link)">{{link.name}}</a>
     </div>
 </div>

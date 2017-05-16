@@ -1,17 +1,22 @@
 [
   {
-    "name": "Home"
+    "name": "Home",
+    "link": "info"
   },
   {
-    "name": "Contacts"
+    "name": "Contacts",
+    "link": "contacts"
   },
   {
-    "name": "Discounts"
+    "name": "Discounts",
+    "link": "discounts"
   },
   {
-    "name": "About"
+    "name": "About",
+    "link": "about"
   },
   {
-    "name": "Ordering"
+    "name": "Ordering",
+    "link": "ordering"
   }
 ]
