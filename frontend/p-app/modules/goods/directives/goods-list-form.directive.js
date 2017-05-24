@@ -1,37 +1,13 @@
 'use strict';
 
-const htmlGenerators = (() => {
-  function link(row, col) {
-    const val = row[col.name];
-    if (val) {
-      return `<a href="${val}" target="_blank">${val.replace('http://', '')}</a>`;
-    }
-    return '';
-  }
-
-  return {
-    link
-  };
-})();
-
 angular
   .module('goods')
-  .filter('htmlSanitize', ['$sce', ($sce) => {
-    return (row, col) => {
-      if (typeof(col.content) === 'string') {
-        return $sce.trustAsHtml(htmlGenerators[col.content](row, col));
-      }
-      return $sce.trustAsHtml(col.content(row));
-    };
-  }])
-  .directive('goodsList', [ '$state', 'AppState', ($state, AppState) => {
+  .directive('goodsList', [ '$state', ($state) => {
     const controller = ['$scope', 'Restangular', ($scope, Restangular) => {
       const options = $scope.options;
       const PER_PAGE = options.perPage;
       const DataSource = options.dataSource;
       const Qty = options.qtyGetter;
-      const currentStateName = $state.current.name;
-      const currentState = AppState.states[currentStateName];
 
       let vm = $scope;
       let QTY = PER_PAGE;
@@ -49,7 +25,7 @@ angular
       // get items list
       const loadList = () => {
         const query = _.assign({
-          schoolType: options.schoolType,
+          goodsType: options.goodsType,
           skip: (vm.currentPage - 1) * PER_PAGE,
           limit: PER_PAGE,
           ask: search
@@ -65,8 +41,8 @@ angular
       };
       // get items qty
       const loadQty = () => {
-        const query = _.assign({ schoolType: options.schoolType }, { ask: search }, vm.query);
-        Restangular.one('schools')
+        const query = _.assign({ goodsType: options.goodsType }, { ask: search }, vm.query);
+        Restangular.one('goods')
           .customGET('qty', query)
           .then((result)=> {
             QTY = result;
@@ -128,7 +104,7 @@ angular
 
     return {
       restrict: 'AEC',
-      templateUrl: '/views/registry/schools-list-form.view.html',
+      templateUrl: '/views/goods/goods-list-form.view.html',
       controller,
       scope: {
         options: '='
