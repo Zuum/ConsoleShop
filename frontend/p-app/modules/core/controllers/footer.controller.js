@@ -5,7 +5,7 @@ angular
   .controller('FooterController', ['$scope', 'FooterLinks',
     ($scope, FooterLinks) => {
       let vm = $scope;
-/*
+
       FooterLinks
         .getList(vm.query)
         .then(links => {
@@ -48,5 +48,4 @@ angular
             .error(err.message);
           console.log(err);
         });
-        */
     }]);
