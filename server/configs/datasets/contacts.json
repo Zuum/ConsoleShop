@@ -1,0 +1,19 @@
+[
+  {
+    "contact":"г. Донецк ул. Артёма 114б",
+    "contactTypeCode":"address"
+  },
+  {
+    "contact":"illushkaprogrammist@mail.ru",
+    "contactTypeCode":"email"
+  },
+  {
+    "contact":"+38(050)-05-05-050",
+    "contactTypeCode":"telephone"
+  },
+  {
+    "contact":"+38(067)-06-07-067",
+    "contactTypeCode":"telephone"
+  }
+
+]
