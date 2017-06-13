@@ -1,7 +1,7 @@
 # Настройка окружения
 1. Установить nvm (node version magager).
 2. Установить node.js 6.10.0 через nvm.
-3. Установить IDE. Я предпочитаю Webstorm.
+3. Установить IDE. Я предпочитаю [Webstorm](https://drive.google.com/open?id=0B6Em_ZwHgyXDbDdnMmxSeFpyMUU).
 4. Установить PostgreSQL версии 9.5. Для доступа к базе установить pgAdmin3.
 
 # Клонирование и запуск проекта
