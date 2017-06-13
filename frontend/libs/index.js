@@ -15,7 +15,9 @@ require('angular-ui-select/dist/select.min.js');
 window.Cookies = require('js-cookie/src/js.cookie.js');
 window.jQuery = window.$ = require('jquery/dist/jquery.min.js');
 require('bootstrap/dist/js/bootstrap.min.js');
-var wow = require('wow/dist/wow.min.js');
+
+// nice scroll libs
+/*var wow = require('wow/dist/wow.min.js');
 var nicescroll = require('jquery.nicescroll/dist/jquery.nicescroll.min.js');
 // init wow
 new wow.WOW().init();
@@ -24,4 +26,4 @@ window.$(document).ready(
     function() {
         window.$("html").niceScroll({cursorcolor:"#000"});
     }
-);
+);*/

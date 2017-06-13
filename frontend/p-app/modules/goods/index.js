@@ -25,7 +25,7 @@ require('./directives/goods-info-form.directive.js');
 require('./directives/goods-list-form.directive.js');
 
 //load services
-require('./services/clocks.service.js');
+require('./services/goods.service.js');
 
 
 

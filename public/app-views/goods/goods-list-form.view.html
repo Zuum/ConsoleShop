@@ -1,5 +1,5 @@
 <div>
-    <div class="input-group">
+    <!--- <div class="input-group">
         <input name="ask"
                id="ask"
                type="text"
@@ -12,27 +12,14 @@
                 type="button"
                 ng-click="search()">Поиск</button>
       </span>
+    </div> -->
+
+    <div class="row" ng-repeat="row in rows">
+            <div class="col-md-4" ng-repeat="item in row">
+                {{item.name}}
+            </div>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th ng-repeat="column in columns">
-                {{column.title}}
-            </th>
-        </tr>
-        </thead>
-        <tbody class="example-animate-container">
-        <tr class="animate-repeat" ng-repeat="row in list">
-            <td ng-repeat="column in columns">
-                <span ng-if="column.content"
-                      ng-bind-html="row | htmlSanitize:column"></span>
-                <span ng-if="!column.content">
-                    {{row[column.name]}}
-                </span>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+
 
     <nav>
         <ul class="pager">

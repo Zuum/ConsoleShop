@@ -11,7 +11,6 @@ angular
               vm.links = result;
             });
         vm.go = (link) => {
-          console.log(link);
           $state.go('public.goods.'+ link +'.list');
         };
 
