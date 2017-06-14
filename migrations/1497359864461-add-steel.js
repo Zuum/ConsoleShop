@@ -14,6 +14,9 @@ exports.up = (next) => {
         delete steel.categotyCode;
         steel.price = parseFloat(steel.price.replace(",", "."));
         return Goods.create(steel)
+          .catch((err) => {
+
+          })
       })
     })
     .nodeify(next)

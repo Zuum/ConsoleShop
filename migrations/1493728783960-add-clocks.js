@@ -14,6 +14,9 @@ exports.up = (next) => {
           delete clock.categotyCode;
           clock.price = parseFloat(clock.price.replace(",", "."));
           return Goods.create(clock)
+            .catch((err) => {
+
+            })
         })
       })
   .nodeify(next)

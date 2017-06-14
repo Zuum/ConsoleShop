@@ -14,6 +14,9 @@ exports.up = (next) => {
         delete electro.categotyCode;
         electro.price = parseFloat(electro.price.replace(",", "."));
         return Goods.create(electro)
+          .catch((err) => {
+
+          })
       })
     })
     .nodeify(next)

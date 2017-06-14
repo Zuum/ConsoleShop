@@ -13,11 +13,15 @@ angular
 
       // paging options
       vm.currentPage = 1;
-      vm.rows = [[],[],[]];
 
       const div = (val, by) => {
-        return (val - val % by) / by;
-      };
+        if (val % by == 0){
+          return ((val - val % by) / by);
+        }
+        else {
+          return ((val - val % by) / by) + 1;
+        }
+        };
 
       // get items list
       const loadList = () => {
@@ -30,6 +34,7 @@ angular
           .getList(query)
           .then((list) => {
             vm.list = list;
+            vm.rows = [[],[],[]];
             for(let i = 0; i < div(list.length, 3); i++){
               for(let j = 0; j < 3; j++){
                 if (list[i*3 + j]){
@@ -47,7 +52,7 @@ angular
       };
       // get items qty
       const loadQty = () => {
-        const query = _.assign({ type: options.goodsType }, vm.query);
+        const query = _.assign({ goodsType: options.goodsType }, vm.query);
         Restangular.one('goods')
           .customGET('qty', query)
           .then((result)=> {
@@ -78,6 +83,10 @@ angular
           vm.currentPage = --vm.currentPage < 1 ? 0 : vm.currentPage;
           loadList();
         }
+      };
+
+      vm.getPath = (path) => {
+        return "/images/" + path + ".jpeg";
       };
 
       /*vm.search = () => {

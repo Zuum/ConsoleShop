@@ -14,6 +14,9 @@ exports.up = (next) => {
         delete china.categotyCode;
         china.price = parseFloat(china.price.replace(",", "."));
         return Goods.create(china)
+          .catch((err) => {
+
+          })
       })
     })
     .nodeify(next)

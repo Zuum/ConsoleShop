@@ -13,8 +13,8 @@ module.exports = (router) => {
       let limit = req.query.limit || null;
       let type = req.query.goodsType;
 
-      const query = type? { offset, limit, include: [ { model: GoodsCategories, where: { code: type } } ]  } :
-      { offset, limit, include: [ { model: GoodsCategories } ] };
+      const query = type? { offset, limit, order:[ "priority", "id" ], include: [ { model: GoodsCategories, where: { code: type } } ]  } :
+      { offset, limit, order:[ "priority", "id" ], include: [ { model: GoodsCategories } ] };
       Goods.findAll(query)
         .then((result) => {
           res.status(200)
