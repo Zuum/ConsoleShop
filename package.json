@@ -7,7 +7,7 @@
     "syncDB": "node server/scripts/run.js syncDB",
     "resetDB": "node server/scripts/run.js syncDB && node server/scripts/run.js resetMigration && echo \"\nresetDB successfully completed\n\td__(-_-)__p\"",
     "refreshDB": "npm run resetDB && migrate && echo \"\nrefreshDB successfully completed\n\td__(-_-)__b\"",
-    "postinstall": "./node_modules/.bin/bower install --config.interactive=false && ./node_modules/.bin/webpack"
+    "postinstall": "./node_modules/.bin/bower install --config.interactive=false && node server/scripts/run.js syncDB && node ./node_modules/migrate/bin/migrate up && ./node_modules/.bin/webpack"
   },
   "dependencies": {
     "babel-core": "^6.18.2",
