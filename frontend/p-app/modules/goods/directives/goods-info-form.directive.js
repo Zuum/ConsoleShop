@@ -16,7 +16,12 @@ angular
       vm.addBasket = (code) => {
         // сохранить заказ в сервис корзины
 
-      }
+      };
+
+      vm.getPath = (path) => {
+        return "/images/" + path + ".jpeg";
+      };
+
     }];
 
     return {

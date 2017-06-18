@@ -9,7 +9,14 @@ const _ = require('lodash');
 const config = require('./db.js');
 
 const models = {};
-const pg = new Sequelize(config.postgres.connectionString);
+const pg = new Sequelize(config.postgres.connectionString, {
+  dialect:  'postgres',
+  protocol: 'postgres',
+  logging: false,
+  dialectOptions: {
+    ssl: true
+  }
+});
 
 const db = {
     Sequelize,

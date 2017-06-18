@@ -1,7 +1,7 @@
 <div>
-    <div class="col-md-12">
+    <div class="col-md-12" ng-if="goods.imagePath">
         <div class="col-md-6">
-        <img ng-src="{{goods.imagePath}}"> </img>
+        <img ng-src="{{getPath(goods.imagePath)}}">
             <p ng-src="goods.price" >Цена:{{goods.price}}</p>
         </div>
 
