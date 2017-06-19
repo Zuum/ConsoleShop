@@ -15,6 +15,12 @@ angular
         };
 
         vm.active = (link) => {
-          return $state.includes(link) ? 'active' : '';
+          var currentState = $state.current.name;
+          if ( currentState.indexOf(link) != -1 ){
+            return 'active';
+          }
+          else {
+            return ''
+          }
         };
       }]);
