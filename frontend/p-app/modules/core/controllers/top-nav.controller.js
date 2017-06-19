@@ -12,7 +12,7 @@ angular
             });
 
         vm.active = (link) => {
-          return $state.includes(link.link.replace('.main', '')) ? 'active' : '';
+          return $state.includes(link) ? 'active' : '';
         };
 
         vm.go = (link) =>{
