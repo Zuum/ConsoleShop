@@ -13,7 +13,8 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "vendor"
   ],
   "dependencies": {
     "font-awesome": "^4.6.1",

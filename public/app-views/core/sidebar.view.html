@@ -1,3 +1,19 @@
-<ul class="nav nav-sidebar" ng-controller="SidebarController">
-    <sidebar-tree tree="tree" ng-repeat="tree in links"></sidebar-tree>
-</ul>
+<li class="publicSidebarItem {{active(tree)}}">
+    <a ui-sref="{{ tree.url }}"
+       ng-if="!tree.children || !tree.children.length">
+        {{ tree.text }}
+    </a>
+    <a style="cursor: pointer;"
+       ng-if="tree.children && tree.children.length"
+       ng-click="toogleElement(tree)">
+        <span class="glyphicon"
+              ng-class="{'glyphicon-menu-right': !tree.expanded, 'glyphicon-menu-down': tree.expanded}">
+        </span>
+        {{ tree.text }}
+    </a>
+    <ul class="nav nav-sidebar"
+        ng-if="tree.children && tree.children.length && tree.expanded"
+        style="padding-left: 30px;">
+        <sidebar-tree tree="child" ng-repeat="child in tree.children"></sidebar-tree>
+    </ul>
+</li>

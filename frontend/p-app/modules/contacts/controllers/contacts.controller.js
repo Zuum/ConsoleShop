@@ -5,7 +5,6 @@ angular
 
     Contacts.getList({})
       .then((result) => {
-        console.log(result);
         vm.links = result;
       });
   }]);

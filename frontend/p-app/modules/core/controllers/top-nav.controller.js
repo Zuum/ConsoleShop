@@ -11,11 +11,18 @@ angular
               vm.links = result;
             });
 
-        vm.active = (link) => {
-          return $state.includes(link.link.replace('.main', '')) ? 'active' : '';
-        };
-
         vm.go = (link) =>{
           return $state.go("public." + link + ".main");
-        }
+        };
+
+        vm.active = (link) => {
+          var currentState = $state.current.name;
+          if ( currentState.indexOf(link) != -1 ){
+            return 'active';
+          }
+          else {
+            return ''
+          }
+        };
+
       }]);
