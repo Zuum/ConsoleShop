@@ -13,16 +13,48 @@
                 ng-click="search()">Поиск</button>
       </span>
     </div> -->
-
-    <div class="row" ng-repeat="row in rows">
+<div>
+    <div ng-repeat="row in rows">
             <div class="col-md-4" ng-repeat="item in row">
                 <img ng-src={{getPath(item.imagePath)}}>
                 <br>
                 {{item.name}}
             </div>
     </div>
-
-
+</div>
+    <nav class="text-center">
+        <ul class="pagination pagination-lg ">
+            <li class="disabled">
+                <a href="#">
+                <i class="fa fa-chevron-left"></i>
+                    <i class="fa fa-chevron-left"></i>
+            </a>
+            </li>
+            <li class="disabled">
+                <a href="#">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            </li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-chevron-right"></i>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
     <nav>
         <ul class="pager">
             <li class="previous {{backButtonState()}}" style="cursor: pointer">
