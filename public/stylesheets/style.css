@@ -179,7 +179,11 @@ section#types h4 {
   text-transform: uppercase;
   font-family: PlayfairDisplaySCRegular;
 }
-section#types button.more-btn {
+.good-row{
+  margin-bottom: 20px;
+  width: 900px;
+}
+.more-btn {
   font-family: PlayfairDisplaySCBold;
   border: none;
   color: #62C2E4;
@@ -188,11 +192,11 @@ section#types button.more-btn {
   background-color: transparent;
   text-transform: uppercase;
 }
-section#types button.more-btn:hover {
+.more-btn:hover {
   background-color: #62C2E4;
   color: #fff;
 }
-section#types button.offer-btn {
+.offer-btn {
   border: none;
   color: #62C2E4;
   border: 2px solid #62C2E4;
@@ -205,22 +209,63 @@ section#types button.offer-btn {
   -o-transition: all 0.1s 0.2s ease;
   -webkit-transition: all 0.1s 0.2s ease;
 }
-section#types button.offer-btn:hover {
-  background-color: #62C2E4;
+.offer-btn:hover {
+  background-color: #fff;
   color: #62C2E4;
 }
-section#types .card {
+.item-more-btn{
+  margin-left: 10px;
+  border: 2px solid #62C2E4;
+  padding: 10px 15px;
+  background-color: #62C2E4;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  font-family: PlayfairDisplaySCBold;
+  -moz-transition: all 0.1s 0.2s ease;
+  -o-transition: all 0.1s 0.2s ease;
+  -webkit-transition: all 0.1s 0.2s ease;
+}
+.btn-item{
+  
+  font-family: PlayfairDisplaySCBold;
+  color: #62C2E4;
+  border: 2px solid #62C2E4;
+  padding: 10px 15px;
+  background-color: transparent;
+  text-transform: uppercase;
+}
+.btn-item:hover {
+  background-color: #62C2E4;
+  color: #fff;
+}
+.card {
   -moz-transition: all 0.1s 0.2s ease;
   -o-transition: all 0.1s 0.2s ease;
   -webkit-transition: all 0.1s 0.2s ease;
   padding: 5px;
   border: 2px solid transparent;
 }
-section#types .card:hover {
+.card:hover {
   border: 2px solid #62C2E4;
   background-color: #666;
 }
+.img-responsive{
+  padding-top: 8px;
+}
+.card-item{
+  -moz-transition: all 0.1s 0.2s ease;
+  -o-transition: all 0.1s 0.2s ease;
+  -webkit-transition: all 0.1s 0.2s ease;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  padding-bottom: 10px;
 
+}
+.item-name{
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+}
 footer {
   margin-top: 30px;
   padding-top: 20px;
@@ -286,7 +331,7 @@ p#number{
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #000066;
     overflow: hidden;
 }
 
@@ -312,8 +357,8 @@ p#number{
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ddd;
+    color: black;
 }
 
 /* Add a color to the active/current link */
