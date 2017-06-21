@@ -14,17 +14,11 @@ angular
       // paging options
       vm.currentPage = 1;
 
-      const div = (val, by) => {
-        if (val % by == 0){
-          return ((val - val % by) / by);
-        }
-        else {
-          return ((val - val % by) / by) + 1;
-        }
-        };
-
       // get items list
       const loadList = () => {
+        if ((vm.currentPage < 1) || (vm.currentPage > vm.pageCount)) {
+          return;
+        }
         const query = _.assign({
           goodsType: options.goodsType,
           skip: (vm.currentPage - 1) * PER_PAGE,
@@ -35,7 +29,7 @@ angular
           .then((list) => {
             vm.list = list;
             vm.rows = [[],[],[]];
-            for(let i = 0; i < div(list.length, 3); i++){
+            for(let i = 0; i < Math.ceil(list.length / 3); i++){
               for(let j = 0; j < 3; j++){
                 if (list[i*3 + j]){
                   vm.rows[i][j] = list[i*3 + j];
@@ -57,6 +51,7 @@ angular
           .customGET('qty', query)
           .then((result)=> {
             QTY = result;
+            vm.pageCount = Math.ceil(QTY / PER_PAGE);
           })
           .catch(err => {
             console.log(err);
@@ -69,6 +64,13 @@ angular
 
       vm.nextButtonState = () => {
         return vm.currentPage >= Math.ceil(QTY / PER_PAGE) && 'disabled';
+      };
+
+      vm.selectPage = (number) => {
+        if (number != vm.currentPage){
+          vm.currentPage = number;
+          loadList();
+        }
       };
 
       vm.next = () => {
@@ -89,16 +91,15 @@ angular
         return "/images/" + path + ".jpeg";
       };
 
-      /*vm.search = () => {
-        search = "" + vm.ask.toLowerCase().replace(/([ .,;]+)/g, '§sep§').split('§sep§').filter(v => v !== '');
-        loadList();
-        loadQty();
+      vm.go = (id) => {
+        return $state.go($state.current.name.replace(/\.list$/, '.info'), { id: id });
       };
 
-      vm.enterButtonForSearch = ($event) => {
+      /*vm.enterButtonForSearch = ($event) => {
         if ($event.keyCode == 13) vm.search();
       };
       */
+
       loadList();
       loadQty();
     }];

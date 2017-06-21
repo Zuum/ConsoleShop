@@ -16,6 +16,8 @@ require('./controllers/sidebar.controller.js');
 require('./controllers/footer.controller.js');
 require('./controllers/top-nav.controller.js');
 
+//load directives
+require('./directives/page-select.directive.js');
 
 //load services
 require('./services/service-helper.service.js');
