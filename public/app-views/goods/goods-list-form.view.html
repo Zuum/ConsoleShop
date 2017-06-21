@@ -16,14 +16,14 @@
 <div>
     <div class="good-row row" ng-repeat="row in rows">
 
-        <div class="col-md-4" ng-repeat="item in row">
+        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12" ng-repeat="item in row">
             <div class="card-item">
                 <img ng-src={{getPath(item.imagePath)}} class="img-responsive center-block">
                 <br>
                 <div class="item-name">{{item.name}}
                 </div>
-                <button class="item-more-btn" data-toggle="modal" href="#">Подробнее</button>
-                <button class="btn-item" data-toggle="modal" href="#">В Корзину</button>
+                <button data-toggle="modal" href="#">Подробнее</button>
+                <button data-toggle="modal" href="#">В Корзину</button>
             </div>
 
         </div>

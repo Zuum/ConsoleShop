@@ -181,7 +181,6 @@ section#types h4 {
 }
 .good-row{
   margin-bottom: 20px;
-  width: 900px;
 }
 .more-btn {
   font-family: PlayfairDisplaySCBold;
@@ -197,7 +196,6 @@ section#types h4 {
   color: #fff;
 }
 .offer-btn {
-  border: none;
   color: #62C2E4;
   border: 2px solid #62C2E4;
   padding: 10px 15px;
@@ -225,8 +223,11 @@ section#types h4 {
   -o-transition: all 0.1s 0.2s ease;
   -webkit-transition: all 0.1s 0.2s ease;
 }
+.item-more-btn:hover{
+  background-color: #fff;
+  color: #62C2E4;
+}
 .btn-item{
-  
   font-family: PlayfairDisplaySCBold;
   color: #62C2E4;
   border: 2px solid #62C2E4;
