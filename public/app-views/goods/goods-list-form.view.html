@@ -1,72 +1,44 @@
 <div>
-    <!--- <div class="input-group">
-        <input name="ask"
-               id="ask"
-               type="text"
-               ng-keypress="enterButtonForSearch($event)"
-               class="form-control"
-               ng-model="ask"
-               placeholder="Введите текст для поиска">
-      <span class="input-group-btn">
-        <button class="btn btn-default cancelButton"
-                type="button"
-                ng-click="search()">Поиск</button>
-      </span>
-    </div> -->
-<div>
-    <div ng-repeat="row in rows">
-            <div class="col-md-4" ng-repeat="item in row">
-                <img ng-src={{getPath(item.imagePath)}}>
-                <br>
-                {{item.name}}
-            </div>
+    <div>
+        <div class="row" ng-repeat="row in rows">
+                <div class="col-md-4" ng-repeat="item in row">
+                    <a ng-click="go(item.id)">
+                        <img ng-src={{getPath(item.imagePath)}}>
+                        <br>
+                        {{item.name}}
+                    </a>
+                </div>
+        </div>
     </div>
-</div>
-    <nav class="text-center">
-        <ul class="pagination pagination-lg ">
-            <li class="disabled">
-                <a href="#">
-                <i class="fa fa-chevron-left"></i>
-                    <i class="fa fa-chevron-left"></i>
-            </a>
-            </li>
-            <li class="disabled">
-                <a href="#">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-            </li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-chevron-right"></i>
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <nav>
-        <ul class="pager">
-            <li class="previous {{backButtonState()}}" style="cursor: pointer">
-                <a id="prevPage" ng-click="back()">
-                    <span aria-hidden="true">&larr;</span> Назад
-                </a>
-            </li>
-            <li class="next {{nextButtonState()}}" style="cursor: pointer">
-                <a id="nextPage" ng-click="next()">
-                    Далее <span aria-hidden="true">&rarr;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="row">
+        <nav class="text-center">
+            <ul class="pagination pagination-lg ">
+                <li class="{{backButtonState()}}" style="cursor: pointer">
+                    <a ng-click="selectPage(1)">
+                        <i class="fa fa-chevron-left"></i>
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li class="{{backButtonState()}}" style="cursor: pointer">
+                    <a ng-click="back()">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                </li>
+                <li>
+                    <a><page-select></page-select> из {{pageCount}}</a>
+                </li>
+                <li class="{{nextButtonState()}}" style="cursor: pointer">
+                    <a ng-click="next()">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </li>
+                <li class="{{nextButtonState()}}" style="cursor: pointer">
+                    <a ng-click="selectPage(pageCount)">
+                        <i class="fa fa-chevron-right"></i>
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </div>
