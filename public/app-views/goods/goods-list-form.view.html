@@ -16,33 +16,36 @@
     </div>
 </div>
 
+<div class="row">
+    <nav class="text-center">
+        <ul class="pagination pagination-lg">
+            <li class="{{backButtonState()}}" style="cursor: pointer">
+                <a ng-click="selectPage(1)">
+                    <i class="fa fa-chevron-left"></i>
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            </li>
+            <li class="{{backButtonState()}}" style="cursor: pointer">
+                <a ng-click="back()">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
+            </li>
+            <li>
+                <a style="padding-bottom:7px;padding-top:7px;"><page-select></page-select> из {{pageCount}}</a>
+            </li>
+            <li class="{{nextButtonState()}}" style="cursor: pointer">
+                <a ng-click="next()">
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="{{nextButtonState()}}" style="cursor: pointer">
+                <a ng-click="selectPage(pageCount)">
+                    <i class="fa fa-chevron-right"></i>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-<nav class="text-center text_offset">
-    <ul class="pagination pagination-lg ">
-        <li class="disabled">
-            <a href="#">
-                <i class="fa fa-chevron-left"></i>
-                <i class="fa fa-chevron-left"></i>
-            </a>
-        </li>
-        <li class="disabled">
-            <a href="#">
-                <i class="fa fa-chevron-left"></i>
-            </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
-
-        <li>
-            <a href="#">
-                <i class="fa fa-chevron-right"></i>
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
-
+</div>
+</div>
