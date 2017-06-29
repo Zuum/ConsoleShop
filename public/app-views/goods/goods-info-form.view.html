@@ -1,21 +1,26 @@
 <div>
     <div class="col-md-12" ng-if="goods.imagePath">
-        <div class="col-md-6">
-        <img ng-src="{{getPath(goods.imagePath)}}">
-            <p ng-src="goods.price" >Цена:{{goods.price}}</p>
+        <div class="row">
+        <div class="col-md-4 card-items">
+        <img class="center-block" ng-src="{{getPath(goods.imagePath)}}">
+            <p class="price-item" ng-src="goods.price" >Цена:{{goods.price}} руб.</p>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-5 item-names">
             <p ng-src="goods.name">Название:{{goods.name}}</p>
             <p ng-src="goods.description">Описание:{{goods.description}}</p>
         </div>
-
-        <div class="col-md-2">
+        <div class="col-md-3 item-names">
             <span ng-click="addBasket(goods.code)"> Добавить в корзину</span>
+            <button class="btn btn-info" data-toggle="modal" href="#">
+                В Корзину
+                <i class="fa fa-cart-plus"></i>
+            </button>
         </div>
-
+        </div>
     </div>
-    <a class="previous" ng-click="backToList()" style="cursor: pointer">
-        <span>←</span>Вернуться к списку
-    </a>
+    <button class="btn btn-info text_offset" data-toggle="modal" href="#" ng-click="backToList()">
+        <i class="glyphicon glyphicon-chevron-left"></i>Вернуться к списку
+    </button>
+
 </div>

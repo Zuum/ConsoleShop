@@ -1,5 +1,13 @@
-<div class="topnav" id="TopNav" ng-controller="NavBarController">
+<nav>
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="glyphicon glyphicon-th-list"></span>
+        </button>
+    </div>
+<div class="topnav collapse navbar-collapse" id="TopNav" ng-controller="NavBarController">
     <div ng-repeat="link in links">
         <a class="{{active(link.code)}}" ng-click="go(link.code)">{{link.name}}</a>
     </div>
 </div>
+    </nav>

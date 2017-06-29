@@ -1,22 +1,22 @@
 [
   {
-    "name": "Home",
+    "name": "Главная",
     "link": "info"
   },
   {
-    "name": "Contacts",
+    "name": "Контакты",
     "link": "contacts"
   },
   {
-    "name": "Discounts",
+    "name": "Акции",
     "link": "discounts"
   },
   {
-    "name": "About",
+    "name": "О нас",
     "link": "about"
   },
   {
-    "name": "Ordering",
+    "name": "Оформить заказ",
     "link": "ordering"
   }
 ]

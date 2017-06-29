@@ -2,16 +2,34 @@
 <div>
     <div class="good-row row" ng-repeat="row in rows">
 
-        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12" ng-repeat="item in row">
+        <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-4  col-xs-10 col-xs-offset-0" ng-repeat="item in row">
             <div class="card-item">
-                <img ng-src={{getPath(item.imagePath)}} class="img-responsive center-block">
-                <br>
-                <div class="item-name">{{item.name}}
-                </div>
-                <button data-toggle="modal" href="#">Подробнее</button>
-                <button data-toggle="modal" href="#">В Корзину</button>
-            </div>
+                <a class="style-item" ng-click="go(item.id)">
+                    <img ng-src={{getPath(item.imagePath)}} class="center-block">
 
+                    <div class="item-name">{{item.name.length > 50 ? item.name.substring(0, 50) + '...' : item.name}}
+                    </div></a>
+
+                <div class="item-action">
+                    <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <button ng-click="go(item.id)" class="btn btn-info" data-toggle="modal" ng-href="#">Подробнее</button>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset-1">
+                        <button class="btn btn-info" data-toggle="modal" href="#">
+                            В Корзину
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-8 col-md-offset-6">
+                        <span class="price-item">{{item.price}} руб.</span>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
