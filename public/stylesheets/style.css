@@ -316,9 +316,11 @@ p#number{
   background-color: #31b0d5;
   overflow: hidden;
   cursor: pointer;
+
 }
 
 /* Style the links inside the navigation bar */
+
 .topnav a {
   float: left;
   display: block;
@@ -328,6 +330,7 @@ p#number{
   text-decoration: none;
   font-size: 17px;
   cursor: pointer;
+
 }
 .text_offset{
   margin-top: 30px;
@@ -336,8 +339,10 @@ p#number{
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #5f778e;
-  color: #fff
-cursor: pointer;
+  color: #fff;
+  cursor: pointer;
+  border-right: 1px solid #babbbd;
+  border-left: 1px solid #babbbd;
 }
 
 /* Add a color to the active/current link */
@@ -345,6 +350,8 @@ cursor: pointer;
   background-color: #5f778e;
   color: #fff;
   cursor: pointer;
+  border-right: 1px solid #babbbd;
+  border-left: 1px solid #babbbd;
 }
 .item-padge{
   width: 38px;
@@ -383,7 +390,9 @@ cursor: pointer;
   color: #000;
   text-decoration: none !important;
 }
-
+.widget{
+  float: right;
+}
 .price-item{
   padding-bottom: 10px;
   padding-left: 5px;
@@ -408,4 +417,63 @@ cursor: pointer;
   -webkit-transition: all 0.1s 0.2s ease;
   border: 2px solid #fff;
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
-  padding-bottom: 10px;}
+  padding-bottom: 10px;
+}
+.basket {
+  width: 52px;
+  height: 52px;
+  margin-right: 10px;
+  background:url("../images/shopping.png") no-repeat 1px 4px;
+  overflow: hidden;
+}
+.topnav .basket:hover{
+  background-color: #31b0d5;
+  border: 0;
+}
+.topnav .basket:active  {
+  background-color: #31b0d5;
+  border: 0
+}
+
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:absolute;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: absolute;
+  width: 50%; /* Default */
+
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  padding:10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
+}

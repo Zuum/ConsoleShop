@@ -28,3 +28,5 @@ require('./modules/info/index.js');
 require('./modules/contacts/index.js');
 // load `goods` module
 require('./modules/goods/index.js');
+// load `cart` module
+require('./modules/cart/index.js');

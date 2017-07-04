@@ -7,4 +7,5 @@ angular
         $scope.dirOptions = {
           goods: Restangular.one(`goods`).customGET($state.params.id).$object
         };
+
       }]);
